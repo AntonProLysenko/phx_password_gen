@@ -5,5 +5,18 @@
         <h1>Password Generator</h1>
       </div>
     </div>
+    <input type="text" value ="">
+
+    <.form let={f} for={:password} action={"/"}>
+      <div class="row">
+        <div class="column">
+          <%= label f, :password_length, "Password Length: " %>
+        </div>
+
+        <div class="column">
+          <%= select f, :length, [], class: "float-right"%>
+        </div>
+      </div>
+    </.form>
   </div>
 </div>
