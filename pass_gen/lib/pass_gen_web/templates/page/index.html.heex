@@ -17,6 +17,32 @@
           <%= select f, :length, [], class: "float-right"%>
         </div>
       </div>
+
+
+      <div class="row">
+        <div class="column">
+          <%= label f, :uppercase, "Include Uppercase Characters: " %>
+        </div>
+
+        <div class="column">
+          <%= checkbox f, :uppercase %> (e.g. ABCDEF)
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="column">
+          <%= label f, :symbols, "Include Symbols: " %>
+        </div>
+
+        <div class="column">
+          <%= checkbox f, :symbols %> (e.g. @#$%)
+        </div>
+      </div>
+
+      <div class="row">
+        <%= submit "Generate Password", class: "column column-100"%>
+      </div>
     </.form>
   </div>
 </div>
