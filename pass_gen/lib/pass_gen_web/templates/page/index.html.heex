@@ -5,7 +5,7 @@
         <h1>Password Generator</h1>
       </div>
     </div>
-    <input type="text" value ="">
+    <input type="text" value ={@password}>
 
     <.form let={f} for={:password} action={"/"}>
       <div class="row">
@@ -14,7 +14,7 @@
         </div>
 
         <div class="column">
-          <%= select f, :length, [], class: "float-right"%>
+          <%= select f, :length, @password_length, class: "float-right"%>
         </div>
       </div>
 
