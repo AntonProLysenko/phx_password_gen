@@ -14,8 +14,8 @@ defmodule PassGenWeb.PageController do
     render(conn, "index.html", password_length: password_lenghts, password: password )
   end
 
-  def generate(conn, params) do
-    IO.inspect(params["password"], label: "PARAMS")
+  def generate(conn, %{"password" =>password_params}) do
+    # IO.inspect(params["password"], label: "PARAMS")
 
     password_lenghts = [
       Weak: Enum.map(1..15, & &1),
@@ -23,7 +23,7 @@ defmodule PassGenWeb.PageController do
       Unreal: [100, 150]
     ]
 
-    {:ok, password} = PassGenerator.generate(params["password"])
+    {:ok, password} = PassGenerator.generate(password_params)
 
     render(conn, "index.html", password_length: password_lenghts, password: password)
   end
