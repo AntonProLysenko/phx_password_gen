@@ -6,8 +6,8 @@
       </div>
     </div>
     <input type="text" value ={@password}>
-
-    <.form let={f} for={:password} action={"/"}>
+    <!--<.form let={f} for={:password} action={"/")}>-->
+    <.form let={f} for={:password} action={Routes.page_path(@conn, :generate)}>
       <div class="row">
         <div class="column">
           <%= label f, :password_length, "Password Length: " %>
