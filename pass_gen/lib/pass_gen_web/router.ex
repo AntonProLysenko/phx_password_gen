@@ -19,12 +19,16 @@ defmodule PassGenWeb.Router do
 
     get "/", PageController, :index
     post "/",  PageController, :generate
+
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", PassGenWeb do
-  #   pipe_through :api
-  # end
+  #For controllers/api
+  scope "/api", PassGenWeb.Api do
+     pipe_through :api
+
+     post "/", PageController, :api_generate
+  end
 
   # Enables LiveDashboard only for development
   #
